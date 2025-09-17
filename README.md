@@ -8,7 +8,7 @@ How to get the project working
 3. copy and paste the SQL queries found in sql.txt into your database in the SQL window (here https://github.com/whitestjake/reactmysql/blob/main/sql.text.txt)
 
 pull from this repository (option 1, not recommended if not git familiar)
-1. open your terminal or command prompt
+1. open your terminal or command prompt, make sure you are in your desired working directory
 2. ```git clone https://github.com/whitestjake/reactmysql```
 
   create your own directories (options 2)
