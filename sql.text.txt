@@ -1,0 +1,281 @@
+CREATE TABLE AdvancedAnalyticsCourseOptions (
+  Subject VARCHAR(3),
+  CourseId SMALLINT(4),
+  CourseName VARCHAR(20),
+  Module VARCHAR(20),
+  Credits TINYINT(1),
+  Enrolled BOOLEAN
+);
+
+CREATE TABLE 2025mostplayedchamps (
+  Name VARCHAR(20),
+  Wins SMALLINT(3),
+  Losses SMALLINT(3),
+  PRIMARY KEY(Name)
+);
+
+CREATE TABLE LeagueChampions (
+  Name VARCHAR(20),
+  PrimaryRole VARCHAR(10),
+  SecondaryRole VARCHAR(10),
+  PRIMARY KEY(Name)
+);
+
+CREATE TABLE WifesRestaurants (
+  Name VARCHAR(20),
+  Address VARCHAR(20),
+  City VARCHAR(20),
+  State VARCHAR(20),
+  Zipcode CHAR(5),
+  Type VARCHAR(20), -- Type of food sold
+  Damage VARCHAR(10) -- Damage signifies average cost Low<$100, Medium<$150, High>$150
+);
+
+CREATE TABLE Traveled (
+  Country VARCHAR(20),
+  State VARCHAR(20),
+  City VARCHAR(20),
+  Reason VARCHAR(20)
+);
+
+CREATE TABLE CoolCars ( 
+  Make VARCHAR(10),
+  Model VARCHAR(10)
+);
+
+CREATE TABLE StickShifts (
+  Year YEAR,
+  Make VARCHAR(20),
+  Model VARCHAR(20) 
+);
+
+CREATE TABLE MyRestaurants (
+  Name VARCHAR(20),
+  Type VARCHAR(20) -- Most general type of food sold
+);
+
+CREATE TABLE Wishlist (
+  Brand VARCHAR(20),
+  Product VARCHAR(20) 
+);
+
+CREATE TABLE StorePrices (
+  Brand VARCHAR(20),
+  Product VARCHAR(20),
+  Price SMALLINT(5)
+);
+
+INSERT INTO AdvancedAnalyticsCourseOptions
+VALUES
+('DSB', 6000, 'Data Science Strategy & Leadership', 'Core Course', 3, False),
+('DSA', 6000, 'Data Science & Analytics', 'Core Course', 3, False),
+('DSE', 6000, 'Computing Platforms for Data Science', 'Core Course', 3, False),
+('CSC', 5825, 'Introduction to Machine Learning and Applications', 'Major Course', 3, True),
+('CSC', 7760, 'Deep Learning', 'Major Course', 3, False),
+('CSC', 7810, 'Data Mining: Algorithms and Applications', 'Core Course', 3, False),
+('IE', 7860, 'Intelligent Analytics', 'Core Course', 3, False),
+('DSA', 6100, 'Stats Learning: Data Science & Analysis', 'Major Course', 3, False),
+('DSA', 6200, 'Operations Research', 'Major Course', 3, False),
+('DSA', 6300, 'Decision Analysis & Simulation', 'Major Course', 3, False),
+('DSE', 6100, 'Data Modeling & Management', 'Elective', 3, True),
+('DSA', 7500, 'Practicum', 'Practicum', 6, False);
+
+INSERT INTO 2025mostplayedchamps (Name, Wins, Losses)
+VALUES
+('Caitlyn', 177, 134),
+('Ezreal', 52, 58),
+('Lee Sin', 12, 20),
+('Graves', 7, 20),
+('Lucian', 8, 4),
+('Riven', 4, 6),
+('Jhin', 2, 8),
+('Ekko', 3, 3),
+('Thresh', 2, 1),
+('Yasuo', 1, 1);
+
+INSERT INTO leaguechampions
+VALUES
+('Caitlyn', 'Bot', NULL),
+('Ezreal', 'Bot', NULL),
+('Lee Sin', 'Jungle', NULL),
+('Graves', 'Jungle', 'Bot'),
+('Lucian', 'Bot', NULL),
+('Riven', 'Top', 'Jungle'),
+('Jhin', 'Bot', NULL),
+('Ekko', 'Mid', 'Jungle'),
+('Thresh', 'Support', NULL),
+('Yasuo', 'Mid', 'Top');
+
+INSERT INTO WifesRestaurants (Name, Address, City, State, Zipcode, Type, Damage)
+VALUES -- Not including Ranking, that will come later --
+('Ocean Prime', '2915 Coolidge Hwy', 'Troy', 'MI', '48084', 'Steakhouse', 'High'),
+('BB.Q Chicken', '435 E Big Beaver Rd', 'Troy', 'MI', '48083', 'Wings', 'Medium'),
+('Detroit Pho & Crab', '26680 Dequindre Rd', 'Warren', 'MI', '48091', 'Vietnamese', 'High'),
+('Kacha Thai Market', '205 S Main St', 'Royal Oak', 'MI', '48067', 'Thai', 'Medium'),
+('Quan Ngon', '30701 Dequindre Rd', 'Madison Heights', 'MI', '48071', 'Vietnamese', 'Low'),
+('KPOT', '44375 W 12 Mile Rd', 'Novi', 'MI', '48377', 'KBBQ HotPot', 'Medium'),
+('Takoi', '2520 Michigan Ave', 'Detroit', 'MI', '48216', 'Thai', 'Medium'),
+('D.PRIME Steakhouse', '1777 3rd Ave', 'Detroit', 'MI', '48226', 'Steakhouse', 'High'),
+('Hong Hua', '27925 Orchard Lake Rd', 'Farmington Hills', 'MI', '48334', 'Chinese', 'High'),
+('Chubby Cattle', '2275 Pleasant Hill Rd', 'Duluth', 'GA', '30096', 'KBBQ HotPot', 'High');
+
+INSERT INTO Traveled
+VALUES
+('United States', 'New York', 'New York City', 'Vacation'),
+('United States', 'Florida', 'Tampa', 'Work'),
+('United States', 'Nashville', 'Tennessee', 'Work'),
+('United States', 'California', 'San Jose', 'Work'),
+('United States', 'California', 'Los Angeles', 'Vacation'),
+('United States', 'California', 'San Diego', 'Vacation'),
+('United States', 'Washington', 'Seattle', 'Work'),
+('United States', 'Illinois', 'Chicago', 'Vacation'),
+('Vietnam', 'Ho Chi Minh', 'Ho Chi Minh City', 'Vacation'),
+('United State', 'Georgia', 'Duluth', 'Vacation');
+
+INSERT INTO StickShifts
+VALUES
+(2025, 'Toyota', 'GR86'),
+(2025, 'Subaru', 'WRX'),
+(2025, 'Toyota', 'GR Corolla'),
+(2025, 'Ford', 'Mustang'),
+(2025, 'Acura', 'Integra'),
+(2025, 'Volkswagen', 'Jetta'),
+(2025, 'Honda', 'Civic'),
+(2025, 'Hyundai', 'Elantra N'),
+(2025, 'BMW', 'M2'),
+(2025, 'BMW', 'M3'),
+(2025, 'BMW', 'Z4'),
+(2025, 'Toyota', 'GR Supra'),
+(2025, 'Cadillac', 'CT5-V'),
+(2025, 'Ford', 'Bronco'),
+(2025, 'Nissan', 'Z'),
+(2025, 'Subaru', 'BRZ'),
+(2025, 'Cadillac', 'CT4-V'),
+(2025, 'Mazda', '3'),
+(2025, 'BMW', 'M4'),
+(2025, 'Mazda', 'MX-5 Miata'),
+(2025, 'Lotus', 'Emira'),
+(2025, 'Jeep', 'Wrangler'),
+(2025, 'Porsche', '718 Boxster'),
+(2025, 'Porsche', '718 Cayman'),
+(2025, 'Toyota', 'Tacoma'),
+(2025, 'Porsche', '911'),
+(2025, 'Nissan', 'Versa'),
+(2025, 'Volkswagen', 'Golf R'),
+(2025, 'Mini', 'Cooper');
+
+INSERT INTO CoolCars 
+VALUES
+('Toyota', 'GR86'),
+('Subaru', 'BRZ'),
+('Ford', 'Mustang'),
+('Aston Martin', 'Vanquish'),
+('Dodge', 'Charger'),
+('Acura', 'Integra'),
+('McLaren', 'Artura'),
+('Hyundai', 'Elantra N'),
+('BMW', 'M2'),
+('Toyota', 'GR Supra'),
+('Lotus', 'Emira'),
+('Porsche', '911'),
+('Chevrolet', 'Corvette'),
+('Acura', 'TLX'),
+('Chevrolet', 'Camaro');
+
+INSERT INTO MyRestaurants
+VALUES
+('KPOT', 'KBBQ HotPot'),
+('Chubby Cattle', 'KBBQ HotPot'),
+('Kacha Thai Market', 'Thai'),
+('Buffalo Wild Wings', 'Wings'),
+('Detroit Eatery', 'Indian'),
+('Noodles & Company', 'Fast Food'),
+('White Castle', 'Fast Food'),
+('Olive Garden', 'Italian'),
+('Jets Pizza', 'Pizza'),
+('Hungry Howies', 'Pizza'),
+('Lemon Grass Thai Restaurant', 'Thai');
+
+INSERT INTO Wishlist
+VALUES
+('Samsung', 'TV'),
+('Nvidia', 'Graphics Card'),
+('Lenovo', 'Monitor'),
+('Yeti', 'Microphone'),
+('Samsung', 'Phone'),
+('Hyundai', 'Elantra N'),
+('HP', 'Printer'),
+('Sennheiser', 'Ear Monitors'),
+('Ring', 'Camera'),
+('JBL', 'Soundbar');
+
+INSERT INTO StorePrices
+VALUES
+('Samsung', 'TV', 500),
+('Nvidia', 'Graphics Card', 1400),
+('Lenovo', 'Monitor', 400),
+('Yeti', 'Microphone', 150),
+('Samsung', 'Phone', 1000),
+('Hyundai', 'Elantra N', 40000),
+('HP', 'Printer', 120),
+('Sennheiser', 'Ear Monitors', 230),
+('Ring', 'Camera', 200),
+('JBL', 'Soundbar', 250);
+
+SELECT coolcars.Make, stickshifts.Model FROM stickshifts, coolcars
+WHERE
+stickshifts.Make = coolcars.Make
+AND
+stickshifts.Model = coolcars.Model;
+
+SELECT wishlist.Brand, wishlist.Product, storeprices.Price
+FROM wishlist, storeprices
+WHERE wishlist.Brand = storeprices.Brand 
+AND wishlist.Product = storeprices.Product;
+
+SELECT wishlist.Brand, wishlist.Product, storeprices.Price
+FROM wishlist JOIN storeprices
+ON wishlist.Brand = storeprices.Brand 
+AND wishlist.Product = storeprices.Product
+WHERE wishlist.Brand = 'Samsung' 
+AND storeprices.Price > 400;
+
+SELECT m.Name, m.Wins, l.PrimaryRole
+FROM 2025mostplayedchamps as m
+JOIN LeagueChampions as l ON m.Name = l.Name
+WHERE m.Wins > 50 AND l.PrimaryRole = 'Bot';
+
+SELECT w.Name, w.City, m.Type
+FROM WifesRestaurants as w
+JOIN MyRestaurants as m ON w.Name = m.Name
+WHERE w.Damage = 'High' AND m.Type = 'KBBQ HotPot';
+
+SELECT s.Make, s.Model
+FROM StickShifts as s
+JOIN CoolCars as c ON s.Make = c.Make AND s.Model = c.Model
+WHERE s.Year = 2025 AND c.Make IN ('Toyota','BMW');
+
+SELECT l.Name, l.PrimaryRole, m.Wins
+FROM LeagueChampions as l
+JOIN 2025mostplayedchamps as m ON l.Name = m.Name
+WHERE l.PrimaryRole = 'Jungle' AND m.Wins >= 10;
+
+SELECT w.Name, w.City, m.Type
+FROM WifesRestaurants as w
+JOIN MyRestaurants as m ON w.Name = m.Name
+WHERE w.City = 'Royal Oak' AND w.Damage = 'Medium';
+
+SELECT c.Make, c.Model, s.Year
+FROM CoolCars as c
+JOIN StickShifts as s ON c.Make = s.Make AND c.Model = s.Model
+WHERE c.Make = 'Hyundai' AND s.Year = 2025;
+
+SELECT t.City, w.Name
+FROM traveled as t
+JOIN wifesrestaurants as w ON t.City = w.City
+WHERE t.Reason = 'Vacation' AND t.city = w.City;
+
+
+
+
+
