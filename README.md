@@ -8,9 +8,9 @@ How to get the project working
 3. copy files in the backend folder (here https://github.com/whitestjake/reactmysql/tree/main/backend)
 4. Load your mysql server in XAMPP, create a new database (make sure to update the database name in backend)
 5. copy and paste the SQL queries found in sql.txt (here https://github.com/whitestjake/reactmysql/blob/main/sql.text.txt)
-6. cd backend
-7. npm init -y
-8. npm install express mysql cors nodemon
+6. ```cd backend```
+7. ```npm init -y```
+8. ```npm install express mysql cors nodemon```
 9. modify your backend/package.json to say
 ```json
  "scripts": {
